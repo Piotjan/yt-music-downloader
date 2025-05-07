@@ -1,7 +1,7 @@
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
-from src.back.YTDownloader import YTDownloader
+from src.back.yt_downloader import YTDownloader
 
 
 def parse_args() -> Namespace:
@@ -13,6 +13,7 @@ def parse_args() -> Namespace:
     parser.add_argument(
         "-o",
         "--output_file",
+        type=str,
         required=False,
         default=Path(__file__).parent.joinpath("output_music.mp3").as_posix(),
         help="Path to downloaded file.",
