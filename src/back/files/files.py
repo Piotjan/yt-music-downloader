@@ -32,4 +32,5 @@ class TempFile(_BaseFile):
         open(self.path, "w").close()
 
     def _clean_up(self) -> None:
+        open(self.path, "r").close()
         os.remove(self.path)
